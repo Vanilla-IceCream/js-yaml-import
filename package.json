@@ -1,6 +1,6 @@
 {
   "name": "js-yaml-import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows import files in YAML.",
   "main": "dist/js-yaml-import.cjs.js",
   "module": "dist/js-yaml-import.esm.js",
@@ -35,7 +35,9 @@
     "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
+    "babel-jest": "^26.6.3",
     "babel-plugin-lodash": "^3.3.4",
+    "jest": "^26.6.3",
     "rollup": "^2.33.3"
   }
 }

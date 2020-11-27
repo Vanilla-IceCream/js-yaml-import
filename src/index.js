@@ -19,7 +19,7 @@ class Yaml {
     const json = yaml.load(fs.readFileSync(fileName, 'utf8'));
     const paths = this.searchPaths.filter(fs.existsSync);
 
-    if (json && json[AtImport] && json[AtImport].length) {
+    if (json[AtImport]?.length) {
       let result = {};
 
       for (let i = 0; i < json[AtImport].length; i += 1) {
@@ -36,7 +36,7 @@ class Yaml {
         }
       }
 
-      if (json && json[AtImport]) {
+      if (json[AtImport]) {
         delete json[AtImport];
       }
 
