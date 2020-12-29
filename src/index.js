@@ -30,7 +30,7 @@ class Yaml {
           const input = path.join(dir, yamlImports);
 
           if (fs.existsSync(input)) {
-            const data = yaml.load(fs.readFileSync(input, 'utf8'));
+            const data = this.read(input);
             result = _.merge(result, data);
           }
         }

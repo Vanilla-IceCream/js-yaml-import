@@ -2,7 +2,6 @@
   - foo.yaml
   - bar.yaml
 
-media:
-  webcomic: aaa
-  manga: bbb
-  anime: ccc
+Media:
+  Webcomic: aaa
+  Manga: bbb

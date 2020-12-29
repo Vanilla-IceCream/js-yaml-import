@@ -10,12 +10,12 @@ describe('js-yaml-import', () => {
     const yamlFile = yaml.read(path.join(__dirname, './fixtures/data.yaml'));
 
     expect(yamlFile).toEqual({
-      media: {
-        video_games: 'foo',
-        film_adaptation: 'bar',
-        webcomic: 'aaa',
-        manga: 'bbb',
-        anime: 'ccc',
+      Media: {
+        Anime: 'foo',
+        FilmAdaptation: 'baz',
+        VideoGames: 'bar',
+        Webcomic: 'aaa',
+        Manga: 'bbb',
       },
     });
   });

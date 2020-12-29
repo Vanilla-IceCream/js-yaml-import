@@ -4,7 +4,7 @@ Allows import files in YAML.
 
 ## Requirements
 
-This plugin requires an [LTS](https://github.com/nodejs/Release) Node version (v8.0.0+).
+This plugin requires an [LTS](https://github.com/nodejs/Release) Node version (v10.0.0+).
 
 ## Install
 
@@ -25,15 +25,25 @@ $ yarn add js-yaml js-yaml-import -D
 ```yaml
 # ./src/foo.yaml
 
-media:
-  video_games: foo
+Media:
+  Anime: foo
 ```
 
 ```yaml
 # ./src/bar.yaml
 
-media:
-  film_adaptation: bar
+'@import':
+  - baz.yaml
+
+Media:
+  VideoGames: bar
+```
+
+```yaml
+# ./src/baz.yaml
+
+Media:
+  FilmAdaptation: baz
 ```
 
 ```yaml
@@ -43,10 +53,9 @@ media:
   - foo.yaml
   - bar.yaml
 
-media:
-  webcomic: aaa
-  manga: bbb
-  anime: ccc
+Media:
+  Webcomic: aaa
+  Manga: bbb
 ```
 
 ```js
@@ -58,12 +67,12 @@ const yamlFile = yaml.read(path.join(__dirname, './src/data.yaml'));
 
 console.log('data =', yamlFile);
 // data = {
-//   media: {
-//     video_games: 'foo',
-//     film_adaptation: 'bar',
-//     webcomic: 'aaa',
-//     manga: 'bbb',
-//     anime: 'ccc'
+//   Media: {
+//     Anime: 'foo',
+//     FilmAdaptation: 'baz',
+//     VideoGames: 'bar',
+//     Webcomic: 'aaa',
+//     Manga: 'bbb'
 //   }
 // }
 ```

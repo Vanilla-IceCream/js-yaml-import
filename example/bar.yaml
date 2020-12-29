@@ -1,2 +1,5 @@
-media:
-  film_adaptation: bar
+'@import':
+  - baz.yaml
+
+Media:
+  VideoGames: bar
